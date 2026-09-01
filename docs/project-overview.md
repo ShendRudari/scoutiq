@@ -1,28 +1,44 @@
-# ScoutIQ — AI & Data Engineering Project Overview
+# ScoutIQ — Project Overview
 
-## 1. Description
-ScoutIQ is an AI-powered football data engineering platform. It collects, processes, and analyzes player metrics and match data using Machine Learning models to deliver predictive insights, performance scoring, and automated scouting reports.
+## Problem
+Small clubs, local agents, and fans without access to professional scouting
+tools (like Wyscout or InStat) have no cheap or simple way to identify and
+compare player performance using real data, instead of just watching games.
 
-## 2. Core Problem
-* Football tracking data (stats, spatial events, video clips) is huge, raw, and unorganized.
-* Manual player evaluation lacks predictive data depth and automated metrics.
-* Traditional databases struggle to handle real-time spatial data and complex ML transformations.
+## Solution
+ScoutIQ collects public performance data for players in a selected league,
+processes it into comparative metrics (form, key stats, trends), and
+publishes it as (1) an interactive scouting dashboard and (2) a weekly
+summary for the general public.
 
-## 3. Main Goal & Value Proposition
-* **Data Pipeline (ETL):** Ingest raw match stats/events, clean, transform, and store them efficiently.
-* **AI & Machine Learning:** Build ML models to score player performance, predict growth potential, and cluster similar player types.
-* **Analytics Engine:** Process spatial and statistical data to provide deep actionable scouting insights.
-* **Interactive UI:** Deliver ML insights through a clean decision-making dashboard.
+## Target Audience
+- Primary: fans/analysts of the league who want statistical depth on players
+- Secondary: small clubs / local agents looking for zero-cost scouting
+- Tertiary (long-term): sports content creators who need ready-to-post data
 
-## 4. Target Audience
-* Football Data Analysts & Data Scientists
-* Clubs & Academies looking for Data-Driven Recruitment
-* Independent Scouts needing automated data processing
+## MVP Features (Version 1)
+1. Data pipeline for one league (fixtures + player stats)
+2. Player comparison tool (2-3 players side by side, key metrics)
+3. Weekly summary (top performers, trends of the week)
+4. Public dashboard (Streamlit)
 
-## 5. Architecture & Tech Stack
-* **Language:** Python (Primary Core for Data & ML)
-* **Data Processing & Pipeline (ETL):** Pandas, NumPy, SQL / PySpark
-* **Machine Learning & AI:** Scikit-Learn, XGBoost, PyTorch / TensorFlow
-* **Database & Storage:** PostgreSQL (PostGIS for spatial data) / DuckDB, Feature Store
-* **API Layer:** FastAPI (Python) to expose ML predictions
-* **Frontend Dashboard:** Next.js (React), TypeScript, Tailwind CSS (Consumes FastAPI endpoints)
+## Tech Stack
+- Python (pipeline, analysis logic)
+- SQLite/DuckDB (storage)
+- Streamlit (dashboard)
+- APIs: football-data.org (fixtures/results), API-Football (player stats)
+
+## Data Sources
+- football-data.org — fixtures and results, free tier
+- API-Football — player-level stats, free tier, 100 requests/day cap
+
+## Success Metrics
+- Working MVP with 1 league within [X weeks]
+- Dashboard published and updated weekly without failure
+- At least [X] consistent weekly posts for 4 weeks straight
+
+## Out of Scope (for now)
+- Multi-league support
+- User accounts / login
+- Monetization (subscription, ads)
+- Mobile app
