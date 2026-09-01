@@ -1,24 +1,28 @@
-# ScoutIQ — Project Overview
+# ScoutIQ — AI & Data Engineering Project Overview
 
 ## 1. Description
-ScoutIQ is a web platform designed to streamline football scouting, match performance analysis, and player tracking. It helps scouts and sports analysts collect, structure, and evaluate match data efficiently.
+ScoutIQ is an AI-powered football data engineering platform. It collects, processes, and analyzes player metrics and match data using Machine Learning models to deliver predictive insights, performance scoring, and automated scouting reports.
 
 ## 2. Core Problem
-* Football scouting often relies on fragmented notes, disconnected spreadsheets, and unstructured reports.
-* Tracking multiple players over time becomes difficult without a centralized database.
-* Performance comparisons and trend analysis take too much manual effort.
+* Football tracking data (stats, spatial events, video clips) is huge, raw, and unorganized.
+* Manual player evaluation lacks predictive data depth and automated metrics.
+* Traditional databases struggle to handle real-time spatial data and complex ML transformations.
 
 ## 3. Main Goal & Value Proposition
-* **Centralization:** Store player profiles, match reports, and metrics in one place.
-* **Efficiency:** Standardize report forms so data can be easily searched and filtered.
-* **Analytics:** Provide clear visual insights into player progression and match impact.
+* **Data Pipeline (ETL):** Ingest raw match stats/events, clean, transform, and store them efficiently.
+* **AI & Machine Learning:** Build ML models to score player performance, predict growth potential, and cluster similar player types.
+* **Analytics Engine:** Process spatial and statistical data to provide deep actionable scouting insights.
+* **Interactive UI:** Deliver ML insights through a clean decision-making dashboard.
 
 ## 4. Target Audience
-* Independent Football Scouts
-* Club Analysts and Technical Directors
-* Youth Academies managing talent pipelines
+* Football Data Analysts & Data Scientists
+* Clubs & Academies looking for Data-Driven Recruitment
+* Independent Scouts needing automated data processing
 
-## 5. High-Level Tech Stack
-* **Frontend:** Next.js (React), TypeScript, Tailwind CSS
-* **Backend / Database:** Prisma ORM, PostgreSQL
-* **Authentication:** NextAuth.js (or Clerk)
+## 5. Architecture & Tech Stack
+* **Language:** Python (Primary Core for Data & ML)
+* **Data Processing & Pipeline (ETL):** Pandas, NumPy, SQL / PySpark
+* **Machine Learning & AI:** Scikit-Learn, XGBoost, PyTorch / TensorFlow
+* **Database & Storage:** PostgreSQL (PostGIS for spatial data) / DuckDB, Feature Store
+* **API Layer:** FastAPI (Python) to expose ML predictions
+* **Frontend Dashboard:** Next.js (React), TypeScript, Tailwind CSS (Consumes FastAPI endpoints)
